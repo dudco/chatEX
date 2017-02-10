@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.dudco.chatex.Fragment.FriendFragment">
+    <ListView
+        android:id="@+id/friend_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
-    <include layout="@layout/search"/>
-    <include layout="@layout/myprofile"/>
-    <include layout="@layout/friend"/>
+    </ListView>
 </LinearLayout>
