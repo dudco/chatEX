@@ -4,26 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.dudco.chatex.Fragment.FriendFragment">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:background="@drawable/base_background">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_search"
-            android:cropToPadding="true"
-            android:padding="7dp"/>
-        <EditText
-            android:id="@+id/friend_edit"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:hint="친구 검색"
-            android:textSize="15sp"
-            android:textColor="#000000"
-            android:textCursorDrawable="@drawable/cursor"
-            android:background="#ffffff"/>
-    </LinearLayout>
+
+
+    <include layout="@layout/search"/>
     <include layout="@layout/myprofile"/>
     <include layout="@layout/friend"/>
 </LinearLayout>
