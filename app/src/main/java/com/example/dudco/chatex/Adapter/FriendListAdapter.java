@@ -1,4 +1,4 @@
-package com.example.dudco.chatex;
+package com.example.dudco.chatex.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.dudco.chatex.Datas.User;
+import com.example.dudco.chatex.R;
 
 import java.util.List;
 

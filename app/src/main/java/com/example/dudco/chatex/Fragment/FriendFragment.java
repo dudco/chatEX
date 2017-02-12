@@ -1,19 +1,20 @@
 package com.example.dudco.chatex.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.ListViewCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.example.dudco.chatex.FriendListAdapter;
-import com.example.dudco.chatex.R;
+import com.example.dudco.chatex.Adapter.FriendListAdapter;
+import com.example.dudco.chatex.ChatActivity;
 import com.example.dudco.chatex.Datas.User;
+import com.example.dudco.chatex.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,12 @@ public class FriendFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_friend, container, false);
         friend_edit = (EditText) view.findViewById(R.id.friend_edit);
         friend_list = (ListView) view.findViewById(R.id.friend_list);
+
         items.add(new User("search"));
         items.add(new User("name"));
         items.add(new User("이름"));
         items.add(new User("friend"));
+
         items.add(new User("박태준"));
         items.add(new User("박태준"));
         items.add(new User("박태준"));
@@ -61,6 +64,16 @@ public class FriendFragment extends Fragment {
 
         listAdapter = new FriendListAdapter(getContext(), items);
         friend_list.setAdapter(listAdapter);
+
+        friend_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView name = (TextView) view.findViewById(R.id.profile_text);
+                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                intent.putExtra("name",name.getText().toString());
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
